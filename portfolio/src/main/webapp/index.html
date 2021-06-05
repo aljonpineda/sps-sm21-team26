@@ -1,19 +1,62 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-  </head>
-  <body>
-    <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click <a href="/hello">here</a> to see content created by server code.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="column is-half is-offset-one-quarter">
+            <div class="card">
+                <header class="card-header has-background-grey">
+                    <h1 class="card-header-title title has-text-white-ter">Temiloluwa's Portfolio</h1>
+                </header>
+                <div class="card-content center">
+                    <div id="content" class="content">
+                        <p>This is my portfolio. Hopefully, it'll be good :/</p>
+                        <figure class="image"><img src="/images/koala.jpg" alt='image' /></figure>
+                        <p>Click <a href="/hello">here</a> to see content created by server code.</p>
+
+                        <article class="message">
+                            <div class="message-header has-background-grey-light">
+                                Click here to get a random word:
+                                <button class='button is-info is-small is-outlined is-rounded'
+                                    onclick="addRandomWord()">click</button>
+                            </div>
+                            <div id="word-container message-body"></div>
+                        </article>
+                        <h1 class="subtitle is-4">What makes me ME!</h1>
+                        <p>I am a creative person who enjoys working alongside other people. Over the years, I have had
+                            the privilege of working with diverse persons as a team. These experiences have taught me an
+                            invaluable skill that many may ignore. An opportunity of being in a group of curious and
+                            collaborative individuals is exciting and daunting. My standing-out trait is working with
+                            people. It is what makes me unique.</p>
+                        <p>Here are some projects I've worked on</p>
+                        <ul>
+                            <li>Score Keeper using JS</li>
+                            <li>A mini checkers game</li>
+                            <li>Annndddd more</li>
+                        </ul>
+                        <br>
+                        <p><a class='is-underlined is-italic link'
+                                href="https://www.linkedin.com/in/temiloluwa-ige/">linkedIn</a>
+                            <a class='is-underlined is-italic link' href="https://github.com/temiloluwa-hub">gitHub</a>
+                        </p>
+                        <time datetime="2021-6-4">11:09 PM - 4 Jun 2021</time>
+                    </div>
+
+                </div>
+                <footer class="card-footer">
+                    <a href="#" class="card-footer-item has-background-danger"></a>
+                    <a href="#" class="card-footer-item has-background-warning"></a>
+                    <a href="#" class="card-footer-item has-background-success"></a>
+                </footer>
+            </div>
+        </div>
     </div>
-  </body>
-</html>
