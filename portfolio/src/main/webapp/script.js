@@ -13,16 +13,30 @@
 // limitations under the License.
 
 /**
- * Adds a random greeting to the page.
+ * Adds a random Dad Joke to the page.
  */
-function addRandomWord() {
-  const words =
-      ['Hello', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!', 'Heyyy', 'Welcome'];
+const container = document.querySelector("#wordContainer");
+const addjokebtn = document.querySelector("#addjoke");
+const removejokebtn = document.querySelector("#removejoke");
 
-  // Pick a random greeting.
-  const word = words[Math.floor(Math.random() * words.length)];
-
-  // Add it to the page.
-  const wordContainer = document.getElementById('word-container');
-  wordContainer.innerText = word;
+const getDadJoke = async () => {
+    try {
+        const config = { headers: { Accept: 'application/json' } }
+        const res = await axios.get("https://icanhazdadjoke.com/", config)
+        let joke = res.data.joke;
+        container.innerText = joke;
+    } catch (e) {
+        container.textContent = "NO JOKES AVAILABLE :(";
+    }
 }
+
+function removeJokes() {
+    container.textContent = null;
+}
+
+addjokebtn.addEventListener('click', function () {
+    getDadJoke()
+})
+removejokebtn.addEventListener('click', function () {
+    removeJokes()
+})

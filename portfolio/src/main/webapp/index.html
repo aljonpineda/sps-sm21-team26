@@ -4,59 +4,132 @@
 <head>
     <meta charset="UTF-8">
     <title>My Portfolio</title>
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
 
-<body class="has-background-grey-lighter">
-    <div class="container">
-        <div class="column is-half is-offset-one-quarter">
-            <div class="card">
-                <header class="card-header has-background-grey">
-                    <h1 class="card-header-title title has-text-white-ter">Temiloluwa's Portfolio</h1>
-                </header>
-                <div class="card-content center">
-                    <div id="content" class="content">
-                        <p>This is my portfolio. Hopefully, it'll be good :/</p>
-                        <figure class="image column"><img src="https://media.gettyimages.com/photos/koala-mother-and-child-picture-id1166121752?k=6&m=1166121752&s=612x612&w=0&h=LhNEASrUakWOjaHTJ7OWxRfyXI6FuDqZXv8Zsnibw6U=" alt='image' /></figure>
-                        <p>Click <a href="/hello">here</a> to see content created by server code.</p>
+<body>
+    <header class="has-background-grey-lighter is-size-5-tablet is-size-4-desktop">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+            <a class="navbar-brand is-size-3" href="#">Temiloluwa's Portfolio</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse is-size-6-mobile" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">About Me</a>
+                    </li>
+                </ul>
+                <form class="form-inline mt-2 mt-md-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <main class="main has-background-grey-lighter is-size-6 is-size-4-desktop">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <div class="card">
+                        <!-- <header class="card-header has-background-grey">
+                            <h1 class="card-header-title title has-text-black-ter is-size-1">Temiloluwa's Portfolio</h1>
+                        </header> -->
+                        <div class="card-content center">
+                            <div id="content" class="content">
+                                <p>This is my portfolio. Hopefully, it'll be good :/</p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <figure class="image column" width="inherit"><img
+                                                src="https://media.gettyimages.com/photos/koala-mother-and-child-picture-id1166121752?k=6&m=1166121752&s=612x612&w=0&h=LhNEASrUakWOjaHTJ7OWxRfyXI6FuDqZXv8Zsnibw6U="
+                                                alt='image' /></figure>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <figure class="image column" width="inherit"><img
+                                                src="https://images.pexels.com/photos/936317/pexels-photo-936317.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                                                alt='image' />
+                                        </figure>
+                                    </div>
+                                </div>
+                                <br>
+                                <hr>
+                                <p>Click <a class="is-italic" href="/hello">here</a> to see content created by server
+                                    code.</p>
 
-                        <article class="message">
-                            <div class="message-header has-background-grey-light">
-                                Click here to get a random word:
-                                <button class='button is-info is-small is-outlined is-rounded'
-                                    onclick="addRandomWord()">click</button>
+                                <article class="message">
+                                    <div class="message-header has-background-grey-light is-size-4 is-size-7-mobile">
+                                        Click here to get a random dad joke!
+                                        <div>
+                                            <button id="addjoke"
+                                                class='btn btn-outline-success my-2 my-sm-0'>New</button>
+                                            <button id="removejoke"
+                                                class='btn btn-outline-danger my-2 my-sm-0'>Delete</button>
+                                        </div>
+                                    </div>
+                                    <p id="wordContainer" class="is-size-4 center"></p>
+                                </article>
+                                <br>
+                                <hr>
+                                <h1 class="subtitle text-center is-size-4">What makes me ME!</h1>
+                                <p>I am a creative person who enjoys working alongside other people. Over the years, I
+                                    have
+                                    had
+                                    the privilege of working with diverse persons as a team. These experiences have
+                                    taught
+                                    me an
+                                    invaluable skill that many may ignore. An opportunity of being in a group of curious
+                                    and
+                                    collaborative individuals is exciting and daunting. My standing-out trait is working
+                                    with
+                                    people. It is what makes me unique.</p>
+                                <p>Here are some projects I've worked on</p>
+                                <ul>
+                                    <li><a class="link is-italic" href="scorekeeper.html">Score Keeper using JS</a></li>
+                                    <li>A mini checkers game</li>
+                                    <li>Annndddd more</li>
+                                </ul>
+                                <br>
+                                <p><a class='is-underlined is-italic link'
+                                        href="https://www.linkedin.com/in/temiloluwa-ige/">linkedIn</a>
+                                    <a class='is-underlined is-italic link'
+                                        href="https://github.com/temiloluwa-hub">gitHub</a>
+                                </p>
+                                <time datetime="2021-6-4">11:09 PM - 4 Jun 2021</time>
                             </div>
-                            <div id="word-container"></div>
-                        </article>
-                        <h1 class="subtitle is-4">What makes me ME!</h1>
-                        <p>I am a creative person who enjoys working alongside other people. Over the years, I have had
-                            the privilege of working with diverse persons as a team. These experiences have taught me an
-                            invaluable skill that many may ignore. An opportunity of being in a group of curious and
-                            collaborative individuals is exciting and daunting. My standing-out trait is working with
-                            people. It is what makes me unique.</p>
-                        <p>Here are some projects I've worked on</p>
-                        <ul>
-                            <li>Score Keeper using JS</li>
-                            <li>A mini checkers game</li>
-                            <li>Annndddd more</li>
-                        </ul>
-                        <br>
-                        <p><a class='is-underlined is-italic link'
-                                href="https://www.linkedin.com/in/temiloluwa-ige/">linkedIn</a>
-                            <a class='is-underlined is-italic link' href="https://github.com/temiloluwa-hub">gitHub</a>
-                        </p>
-                        <time datetime="2021-6-4">11:09 PM - 4 Jun 2021</time>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="#" class="card-footer-item has-background-danger"></a>
+                            <a href="#" class="card-footer-item has-background-warning"></a>
+                            <a href="#" class="card-footer-item has-background-success"></a>
+                        </footer>
                     </div>
-
                 </div>
-                <footer class="card-footer">
-                    <a href="#" class="card-footer-item has-background-danger"></a>
-                    <a href="#" class="card-footer-item has-background-warning"></a>
-                    <a href="#" class="card-footer-item has-background-success"></a>
-                </footer>
             </div>
         </div>
-    </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,3 +1,18 @@
-#word-container {
-  margin-top: 20px;
+nav.navbar {
+    background-color: black;
+}
+
+body {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    color: #5a5a5a;
+    font-family: 'Open Sans';
+}
+
+.main {
+    margin-top: 63px;
+}
+
+#wordContainer {
+    text-align: center;
 }
