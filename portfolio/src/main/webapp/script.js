@@ -21,22 +21,42 @@ const removejokebtn = document.querySelector("#removejoke");
 
 const getDadJoke = async () => {
     try {
-        const config = { headers: { Accept: 'application/json' } }
-        const res = await axios.get("https://icanhazdadjoke.com/", config)
+        const config = { headers: { Accept: 'application/json' } };
+        const res = await axios.get("https://icanhazdadjoke.com/", config);
         let joke = res.data.joke;
         container.innerText = joke;
     } catch (e) {
         container.textContent = "NO JOKES AVAILABLE :(";
     }
-}
+};
 
 function removeJokes() {
     container.textContent = null;
-}
+};
 
 addjokebtn.addEventListener('click', function () {
-    getDadJoke()
-})
+    getDadJoke();
+});
 removejokebtn.addEventListener('click', function () {
-    removeJokes()
-})
+    removeJokes();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 100) {
+            document.getElementById('navbar_top').classList.add('is-size-5');
+
+            document.getElementById('navbar-title').classList.remove('is-size-3');
+            document.getElementById('navbar-title').classList.add('is-size-4');
+
+            document.getElementById('form').classList.add('d-none');
+        } else {
+            document.getElementById('navbar_top').classList.remove('is-size-5');
+
+            document.getElementById('navbar-title').classList.add('is-size-3');
+            document.getElementById('navbar-title').classList.remove('is-size-4');
+
+            document.getElementById('form').classList.remove('d-none');
+        }
+    });
+});

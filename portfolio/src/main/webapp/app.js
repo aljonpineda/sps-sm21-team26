@@ -2,17 +2,17 @@ const p1 = {
     score: 0,
     button: document.querySelector("#p1Button"),
     display: document.querySelector("#score1"),
-}
+};
 
 const p2 = {
     score: 0,
     button: document.querySelector("#p2Button"),
     display: document.querySelector("#score2"),
-}
+};
 
 
 const resetButton = document.querySelector("#reset");
-const winningScoreSelect = document.querySelector("#playTo")
+const winningScoreSelect = document.querySelector("#playTo");
 
 let winningScore = 3;
 let isGameOver = false;
@@ -29,24 +29,24 @@ function updateScores(player, opponent) {
         }
         player.display.innerText = player.score;
     }
-}
+};
 
 
 
 p1.button.addEventListener('click', function () {
-    updateScores(p1, p2)
-})
+    updateScores(p1, p2);
+});
 
 p2.button.addEventListener('click', function () {
-    updateScores(p2, p1)
-})
+    updateScores(p2, p1);
+});
 
 winningScoreSelect.addEventListener('change', function () {
     winningScore = parseInt(this.value);
     reset();
-})
+});
 
-resetButton.addEventListener('click', reset)
+resetButton.addEventListener('click', reset);
 
 function reset() {
     isGameOver = false;
@@ -56,4 +56,24 @@ function reset() {
         p.display.classList.remove("has-text-success", "has-text-danger");
         p.button.disabled = false;
     }
-}
+};
+
+document.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 100) {
+            document.getElementById('navbar_top').classList.add('is-size-5');
+
+            document.getElementById('navbar-title').classList.remove('is-size-3');
+            document.getElementById('navbar-title').classList.add('is-size-4');
+
+            document.getElementById('form').classList.add('d-none');
+        } else {
+            document.getElementById('navbar_top').classList.remove('is-size-5');
+
+            document.getElementById('navbar-title').classList.add('is-size-3');
+            document.getElementById('navbar-title').classList.remove('is-size-4');
+
+            document.getElementById('form').classList.remove('d-none');
+        }
+    });
+});
