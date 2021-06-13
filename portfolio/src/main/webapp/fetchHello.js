@@ -1,7 +1,7 @@
 async function showText() {
     const responseFromServer = await fetch('/hello');
-    const textFromResponse = await responseFromServer.text();
+    const myObject = await responseFromServer.json();
     
     const textContainer = document.getElementById('showText');
-    textContainer.innerText = textFromResponse;
+    textContainer.innerText = myObject[0];
 };
