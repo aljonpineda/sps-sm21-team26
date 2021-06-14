@@ -23,13 +23,10 @@
             <div class="collapse navbar-collapse is-size-6-mobile" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home<span class="sr-only"></span></a>
+                        <a class="nav-link" href="index.html">Home<span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">About Me</a>
+                        <a class="nav-link" href="">Projects</a>
                     </li>
                 </ul>
                 <form id="form" class="form-inline mt-2 mt-md-0">
@@ -63,10 +60,10 @@
                                 </div>
                                 <br>
                                 <hr>
-                                <h1>Server Text Example</h1>
+                                <h1>Server Text</h1>
                                 <p>See the text.</p>
-                                <button class='btn btn-outline-warning my-2 my-sm-0' onclick="showText();">
-                                Get Text
+                                <button class='btn btn-outline-warning my-2 my-sm-0' onclick="showText()">
+                                Fetch Text
                                 </button>
                                 <p id="showText"></p>
                                 <p>Click <a href="/hello">here</a> to see the server response directly.</p>
@@ -126,6 +123,20 @@
                             </div>
                         </div>
                     </div>
+                    <form action="/form-handler" method="POST">
+                        <div class="row pb-0">
+                            <p class="is-size-2 col-3 pt-0">Contact me</p>
+                            <div class="form-group col-3 pt-3">
+                                <input placeholder="email" type="email" class="form-control" aria-describedby="emailHelp">
+                            </div>
+                            <div class="form-group col-6 pt-3">
+                                <textarea placeholder="message" type="text" class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                        <input type="submit" class="btn btn-sm btn-outline-primary"/>
+                        </div>
+                    </form>
                 </div>
                 <hr>
                 <br>
@@ -133,8 +144,8 @@
         </div>
     </main>
     <hr>
-    <footer class="bg-dark text-center text-white">
-        <div class="text-center p-3 " style="background-color: rgba(0, 0, 0, 0.2);">
+    <footer class="text-center text-black">
+        <div class="text-center p-3 ">
             © 2021 Copyright: Temiloluwa
         </div>
     </footer>

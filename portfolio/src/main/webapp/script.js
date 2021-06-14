@@ -28,11 +28,11 @@ const getDadJoke = async () => {
     } catch (e) {
         container.textContent = "NO JOKES AVAILABLE :(";
     }
-};
+}
 
 function removeJokes() {
     container.textContent = null;
-};
+}
 
 addjokebtn.addEventListener('click', function () {
     getDadJoke();
@@ -58,5 +58,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
             document.getElementById('form').classList.remove('d-none');
         }
-    });
-});
+    })
+})

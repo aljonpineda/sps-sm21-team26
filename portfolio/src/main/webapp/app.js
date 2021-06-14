@@ -29,7 +29,7 @@ function updateScores(player, opponent) {
         }
         player.display.innerText = player.score;
     }
-};
+}
 
 
 
@@ -56,7 +56,7 @@ function reset() {
         p.display.classList.remove("has-text-success", "has-text-danger");
         p.button.disabled = false;
     }
-};
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('scroll', function () {
@@ -75,5 +75,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
             document.getElementById('form').classList.remove('d-none');
         }
-    });
-});
+    })
+})
