@@ -12,7 +12,7 @@ async function showText() {
                         `My favorite game is ${res.game}`,                
     ];
 
-        const randNum = Math.floor((Math.random()* (messages.length + 1)));
+        const randNum = Math.floor((Math.random()* (messages.length)));
         textContainer.innerText = messages[randNum];
     } catch {
         const textContainer = document.getElementById('showText');
