@@ -17,3 +17,18 @@ body {
     text-align: center;
 }
 
+#map {
+  border: thin solid black;
+  height: 500px;
+}
+
+#side {
+    background-color: brown;
+    color: black;
+    transition: background-color 3s ease-in-out, color 3s ease-in-out;
+}
+
+:hover #side{
+    background-color: darkblue;
+    color: white;
+}

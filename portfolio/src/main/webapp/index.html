@@ -12,7 +12,7 @@
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
 
-<body class="has-background-grey-lighter">
+<body class="has-background-grey-lighter" onload="initMap();">
    <header class="is-size-6-tablet is-size-4-desktop">
         <nav id="navbar_top" class="navbar navbar-expand-md navbar-dark fixed-top">
             <a id="navbar-title" class="navbar-brand is-size-3" href="#">Temiloluwa's Portfolio</a>
@@ -123,14 +123,34 @@
                             </div>
                         </div>
                     </div>
+                    <div class="container">
+                        <div class="row">
+                            <div id="side" class="col-md-8">
+                                <h1 class="mt-1">Sentiment Analysis</h1>
+                                <p>Type a message and click submit to analyze its sentiment:</p>
+                                <form method="POST" action="/sentiment">
+                                    <textarea name="message" placeholder="enter text" type="text" class="form-control"></textarea>
+                                    <br/>
+                                    <button class='btn btn-sm btn-outline-primary' onclick="showSentiment();">Submit</button>
+                                </form>
+                                <p id="showSentiment"></p>
+                            </div>
+                            <div class="col-md-4">
+                                <section>
+                                    <div id="map"></div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
                     <form action="/form-handler" method="POST">
                         <div class="row pb-0">
                             <p class="is-size-2 is-size-3-tablet is-size-4-mobile col-3 pt-0">Contact me</p>
                             <div class="form-group col-3 pt-3">
-                                <input placeholder="email" type="email" class="form-control" aria-describedby="emailHelp">
+                                <input name="email-input" placeholder="email" type="email" class="form-control" aria-describedby="emailHelp">
                             </div>
                             <div class="form-group col-6 pt-3">
-                                <textarea placeholder="message" type="text" class="form-control"></textarea>
+                                <textarea name="text-input" placeholder="message" type="text" class="form-control"></textarea>
                             </div>
                         </div>
                         <div class="text-right">
@@ -160,6 +180,7 @@
         crossorigin="anonymous"></script>
     <script src="script.js"></script>
     <script src="fetchHello.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD--tvlk2pBp4gv67P_d3dF5odM3WEgIhI"></script>
 </body>
 
 </html>
