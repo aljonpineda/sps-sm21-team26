@@ -1,0 +1,33 @@
+
+/*Style the search box inside the navigation bar*/
+.topnav input[type=text]{
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+}
+
+
+.vertical-menu{
+    width: 200px;
+    height: 150px;
+    overflow-y: auto;
+}
+
+.vertical-menu a{
+    background-color: azure;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+.vertical-menu a:hover {
+    background-color: gainsboro;
+}
+
+.vertical-menu a.active {
+    background-color: ghostwhite;
+    color: black;
+}
