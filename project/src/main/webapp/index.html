@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
- <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" href="style.css">
- <script src="script.js"></script>
+<script src="script.js"></script>
 
  <!--Add background color-->
 <body style="background-color:rgb(211, 246, 235);"></body>
 
 <!--Add search bar-->
-<div class="topnav">
-    <input type="text" placeholder="Search...">
-    
+    <input type="text" id="cities" onkeyup="myCities()" placeholder="Search..." title="Type in a city">
+    <ul id="myUL">
+        <li><a href="#">Amsterdam</a></li>
+        <li><a href="#">Paris</a></li>
+    </ul>
+ 
 </html>
 
