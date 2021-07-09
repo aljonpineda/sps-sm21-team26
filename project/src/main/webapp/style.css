@@ -9,25 +9,38 @@
     font-size: 17px;
 }
 
-
-.vertical-menu{
-    width: 200px;
-    height: 150px;
-    overflow-y: auto;
+* {
+  box-sizing: border-box;
 }
 
-.vertical-menu a{
-    background-color: azure;
-    color: black;
-    display: block;
-    padding: 12px;
-    text-decoration: none;
-}
-.vertical-menu a:hover {
-    background-color: gainsboro;
+#cities {
+ 
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
 }
 
-.vertical-menu a.active {
-    background-color: ghostwhite;
-    color: black;
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
 }
