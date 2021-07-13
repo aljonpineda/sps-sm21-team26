@@ -1,3 +1,6 @@
+body{
+  background: linear-gradient(to bottom, #023e8a,#0077b6,#0096c7,#00b4d8);
+}
 .container{
  width: 1200px;
  height: 600px;
@@ -13,7 +16,6 @@
   position: relative;
   width: 100px;
   height: 580px;
-  border: 2px solid black;
   margin: 20px;
 }
 
@@ -32,4 +34,21 @@
   margin: 30px;
   width: 210px;
   height: 170px;
+}
+#cities {
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 200px;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin: 20px 0 0 20px;
+  border-radius:25px;
+  background: #D8D8D8;
+  opacity:0.5;
+}
+
+#cities:focus{
+  background: white;
+  opacity:1.0;
 }
