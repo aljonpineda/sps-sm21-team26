@@ -1,0 +1,35 @@
+.container{
+ width: 1200px;
+ height: 600px;
+}
+
+.column{
+  float: left;
+  width: 30%;
+  margin: 100
+}
+
+.location{
+  position: relative;
+  width: 100px;
+  height: 580px;
+  border: 2px solid black;
+  margin: 20px;
+}
+
+.guides{
+  margin: 50px;
+  height: 550px;
+}
+
+.person1{
+  margin: 60px;
+  width: 160px;
+  height: 150px;
+  transform: rotate(10deg);
+}
+.person2{
+  margin: 30px;
+  width: 210px;
+  height: 170px;
+}
