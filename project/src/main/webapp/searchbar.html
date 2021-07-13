@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="searchbar.css">
+<script src="searchbar.js"></script>
+
+ <!--Add background color-->
+<body style="background-color:rgb(211, 246, 235);"></body>
+
+<!--Add search bar-->
+    <input type="text" id="cities" onkeyup="myCities()" placeholder="Search..." title="Type in a city">
+    <ul id="myUL">
+            <div class="dropdown">
+                <li><a href="#"><button onclick="myDropdown()" class="dropbtn">Washington D.C.</button></a></li>
+                    <div id="myDropdown" class="dropdown-content">
+                        <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
+                        <a href="#monument">Washington Monument</a>
+                        <a href="#whitehouse">White House</a>
+                        <a href="#smithsonian">Smithsonians</a>
+                        <a href="#capitolbuilding">The Capitol Building</a>
+                        <a href="#lincolnmemorial">The Lincoln Memorial</a>
+                    </div>
+            </div>
+    </ul>
+ 
+</html>
+
