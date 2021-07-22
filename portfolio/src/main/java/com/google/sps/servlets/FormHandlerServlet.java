@@ -1,4 +1,4 @@
-package main.java.com.google.sps.servlets;
+package com.google.sps.servlets;
 
 import java.io.IOException;
 import javax.servlet.annotation.WebServlet;
@@ -9,7 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/form-handler")
 public class FormHandlerServlet extends HttpServlet {
 
-  @Override
+    /**
+     *
+     */
+    private static final long serialVersionUID = 6734233536872851287L;
+
+    @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
     // Get the value entered in the form.

@@ -1,186 +1,275 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>team26</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="sps-sm21-team26/software-product-sprint/portfolio/src/main/webapp/searchbar.js"></script>
 </head>
 
-<body class="has-background-grey-lighter" onload="initMap();">
-   <header class="is-size-6-tablet is-size-4-desktop">
-        <nav id="navbar_top" class="navbar navbar-expand-md navbar-dark fixed-top">
-            <a id="navbar-title" class="navbar-brand is-size-3" href="#">Temiloluwa's Portfolio</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse is-size-6-mobile" id="navbarCollapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home<span class="sr-only"></span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Projects</a>
-                    </li>
-                </ul>
-                <form id="form" class="form-inline mt-2 mt-md-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
+<body class="d-flex text-center text-white bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="mb-auto">
+            <div>
+                <h3 class="float-md-left mb-0">Team Project</h3>
+                <nav class="nav nav-masthead justify-content-center float-md-right">
+
+                        <a class="nav-link" href="/login">Login</a>
+                        <a class="nav-link" href="/signup">Sign Up</a>
+                </nav>
             </div>
-        </nav>
-    </header>
-    <main class="main has-background-grey-lighter is-size-6 is-size-4-desktop">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-1 has-background-grey-lighter"></div>
-                <div class="col-md-10">
-                    <div class="card">
-                        <div class="card-content center">
-                            <div id="content" class="content">
-                                <p>This is my portfolio. Hopefully, it'll be good :/</p>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <figure class="image column" width="inherit"><img
-                                                src="https://media.gettyimages.com/photos/koala-mother-and-child-picture-id1166121752?k=6&m=1166121752&s=612x612&w=0&h=LhNEASrUakWOjaHTJ7OWxRfyXI6FuDqZXv8Zsnibw6U="
-                                                alt='image' /></figure>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <figure class="image column" width="inherit"><img
-                                                src="https://images.pexels.com/photos/936317/pexels-photo-936317.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                                                alt='image' />
-                                        </figure>
-                                    </div>
-                                </div>
-                                <br>
-                                <hr>
-                                <h1>Server Text</h1>
-                                <p>See the text.</p>
-                                <button class='btn btn-outline-warning my-2 my-sm-0' onclick="showText()">
-                                Fetch Text
-                                </button>
-                                <p id="showText"></p>
-                                <p>Click <a href="/hello">here</a> to see the server response directly.</p>
-                                <article class="message">
-                                    <div class="message-header has-background-grey-light is-size-4 is-size-7-mobile">
-                                        Get a random dad joke! :/
-                                        <div>
-                                            <button id="addjoke"
-                                                class='btn btn-outline-success my-2 my-sm-0'>New</button>
-                                            <button id="removejoke"
-                                                class='btn btn-outline-danger my-2 my-sm-0'>Delete</button>
-                                        </div>
-                                    </div>
-                                    <p id="wordContainer" class="is-size-4 center"></p>
-                                </article>
+        </header>
+        <main class="px-3 mt-5">
+            <p class="lead"> Welcome! <br> Jump right in and explore! <br></p>
+            <input type="text" id="cities" onkeyup="myCities()" placeholder="Search..." title="Type in a city">
+            <ul id="myUL">
+                <div class="container vertical-menu">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3">
+                            <div class="dropdown">
+
+                    <div class="card bg-transparent">
+                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">Athens</button></a></li>
+                            <div id="myDropdown" class="dropdown-content">
+                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
+                                <a href="#acropolisathens">Acropolis of Athens</a>
+                                <a href="#agoraathens">Ancient Agora of Athens</a>
+                                <a href="panathenaic">Panathenaic Stadium</a>
+                                <a href="#parthenon">Parthenon</a>
+                                <a href="#zeus">Temple of Olympian Zeus</a>                        
                             </div>
-                        </div>
                     </div>
-                    <br>
-                    <div class="tile is-ancestor">
-                        <div class="tile is-4 is-vertical is-parent">
-                            <div class="tile is-child box notification is-primary">
-                            </div>
-                            <div class="tile is-child box notification is-danger">
-                                <h1 class="title is-size-4">Projects</h1>
-                                <hr>
-                                <div class="is-size-5">
-                                    <p> My projects are 
-                                        <a class=" link is-italic" href="scorekeeper.html">score keeper</a>, a mini
-                                        checkers game, annndddd more...
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tile is-parent">
-                            <div class="tile is-child box notification is-success">
-                                <h1 class="title text-center is-size-3">What makes me ME!</h1>
-                                <hr>
-                                <p class="text-center is-size-4"> I am a creative person who enjoys working alongside
-                                    other people.
-                                    Over the
-                                    years,
-                                    I
-                                    have
-                                    had
-                                    the privilege of working with diverse persons as a team. These experiences
-                                    have
-                                    taught
-                                    me an
-                                    invaluable skill that many may ignore. An opportunity of being in a group of
-                                    curious
-                                    and
-                                    collaborative individuals is exciting and daunting. My standing-out trait is
-                                    working
-                                    with
-                                    people. It is what makes me unique.</p>
-                            </div>
-                        </div>
                     </div>
-                    <div class="container">
-                        <div class="row">
-                            <div id="side" class="col-md-8">
-                                <h1 class="mt-1">Sentiment Analysis</h1>
-                                <p>Type a message and click submit to analyze its sentiment:</p>
-                                <form method="POST" action="/sentiment">
-                                    <textarea name="message" placeholder="enter text" type="text" class="form-control"></textarea>
-                                    <br/>
-                                    <button class='btn btn-sm btn-outline-primary' onclick="showSentiment();">Submit</button>
-                                </form>
-                                <p id="showSentiment"></p>
+
+                    <div class="dropdown">
+                    <div class="card bg-transparent">
+                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">Barcelona</button></a></li>
+                            <div id="myDropdown" class="dropdown-content">
+                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
+                                <a href="#sagradafamilia">La Sagrada Familia</a>
+                                <a href="#guell">Park Guell</a>
+                                <a href="mila">Casa Mila</a>
+                                <a href="batllo"">Casa Batllo</a>
+                                <a href="#barrigotic">Barri Gotic</a>
+                                <a href="#catedralbarcelona">Catedral de Barcelona</a>                        
+                                <a href="picasso">Museu Picasso</a>
                             </div>
-                            <div class="col-md-4">
-                                <section>
-                                    <div id="map"></div>
-                                </section>
-                            </div>
-                        </div>
                     </div>
-                    <hr>
-                    <form action="/form-handler" method="POST">
-                        <div class="row pb-0">
-                            <p class="is-size-2 is-size-3-tablet is-size-4-mobile col-3 pt-0">Contact me</p>
-                            <div class="form-group col-3 pt-3">
-                                <input name="email-input" placeholder="email" type="email" class="form-control" aria-describedby="emailHelp">
+                    </div>
+
+                    <div class="dropdown">
+                    <div class="card bg-transparent">
+                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">Bangkok</button></a></li>
+                            <div id="myDropdown" class="dropdown-content">
+                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
+                                <a href="#grandpalace">The Grand Palace</a>
+                                <a href="#chetuphon">What Phra Chetuphon</a>
+                                <a href="watarun">Wat Arun Ratchawararam</a>
+                                <a href="emeraldbuddha">Temple of the Emerald Buddha</a>
                             </div>
-                            <div class="form-group col-6 pt-3">
-                                <textarea name="text-input" placeholder="message" type="text" class="form-control"></textarea>
+                    </div>
+                    </div>
+
+                    <div class="dropdown">
+                    <div class="card bg-transparent">
+                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">Cusco</button></a></li>
+                            <div id="myDropdown" class="dropdown-content">
+                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
+                                <a href="#colosseum">Colosseum</a>
+                                <a href="#pantheon">Pantheon</a>
+                                <a href="forum">Roman Forum</a>
+                                <a href="sistinechapel">Sistine Chapel</a>
+                                <a href="#spanishsteps">Spanish Steps</a>
+                                <a href="#basilica">St. Peter's Basilica</a>                        
+                                <a href="trevi">Trevi Fountain</a>
+                                <a href="vatican">Vatican Museum</a>   
                             </div>
-                        </div>
-                        <div class="text-right">
-                        <input type="submit" class="btn btn-sm btn-outline-primary"/>
-                        </div>
-                    </form>
+                    </div>
+                    </div>
+
+                    <div class="dropdown">
+                    <div class="card bg-transparent">
+                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">Dubai</button></a></li>
+                            <div id="myDropdown" class="dropdown-content">
+                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
+                                <a href="#colosseum">Colosseum</a>
+                                <a href="#pantheon">Pantheon</a>
+                                <a href="#forum">Roman Forum</a>
+                                <a href="#sistinechapel">Sistine Chapel</a>
+                                <a href="#spanishsteps">Spanish Steps</a>
+                                <a href="#basilica">St. Peter's Basilica</a>                        
+                                <a href="#trevi">Trevi Fountain</a>
+                                <a href="#vatican">Vatican Museum</a>   
+                            </div>
+                    </div>
+                    </div>
+
+                    <div class="dropdown">
+                    <div class="card bg-transparent">
+                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">Hong Kong</button></a></li>
+                            <div id="myDropdown" class="dropdown-content">
+                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
+                                <a href="#colosseum">Colosseum</a>
+                                <a href="#pantheon">Pantheon</a>
+                                <a href="#forum">Roman Forum</a>
+                                <a href="#sistinechapel">Sistine Chapel</a>
+                                <a href="#spanishsteps">Spanish Steps</a>
+                                <a href="#basilica">St. Peter's Basilica</a>                        
+                                <a href="#trevi">Trevi Fountain</a>
+                                <a href="#vatican">Vatican Museum</a>   
+                            </div>
+                    </div>
+
+                    <div class="dropdown">
+                    <div class="card bg-transparent">
+                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">Istanbul</button></a></li>
+                            <div id="myDropdown" class="dropdown-content">
+                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
+                                <a href="#basilicacistern">Basilica Cistern</a>B
+                                <a href="#grandbazaar">Grand Bazaar</a>
+                                <a href="#hagiasophia">Hagia Sophia</a>
+                                <a href="#bluemosque">The Blue Mosque</a>
+                                <a href="#topkapi">Topkapi Palace Museum</a>    
+                            </div>
+                    </div>
+                    </div>
+
+                    <div class="dropdown">
+                    <div class="card bg-transparent">
+                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">London</button></a></li>
+                            <div id="myDropdown" class="dropdown-content">
+                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
+                                <a href="#bigben">Big Ben</a>
+                                <a href="#buckingham">Buckingham Palace</a>
+                                <a href="#towerbridge">Tower Bridge</a>
+                                <a href="#towerlondon">Tower of London</a>        
+                                <a href="#westminster">Westminster Abbey</a>                   
+                            </div>
+                    </div>
+                    </div>
+
+                    <div class="dropdown">
+                    <div class="card bg-transparent">
+                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">New York City</button></a></li>
+                            <div id="myDropdown" class="dropdown-content">
+                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
+                                <a href="#brooklyn">Brooklyn Bridge</a>
+                                <a href="#empire">Empire State Building</a>
+                                <a href="#metroart">The Metropolitan Museum of Art</a>
+                                <a href="#guggenheim">Solomon R. Guggenheim Museum</a>
+                                <a href="#liberty">Statue of Liberty</a>                          
+                            </div>
+                    </div>
+                    </div>
+
+                    <div class="dropdown">
+                    <div class="card bg-transparent">
+                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">Osaka</button></a></li>
+                            <div id="myDropdown" class="dropdown-content">
+                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
+                                <a href="#osakacastle">Osaka Castle/a>
+                                <a href="#shitennoji">Shitennoji</a>
+                                <a href="#tsutenkaku">Tsutenkaku</a>
+                                <a href="#umeda">Umeda Sky Building</a>
+
+                            </div>
+                    </div>
+                    </div>
+
+                    <div class="dropdown">
+                    <div class="card bg-transparent">
+                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">Paris</button></a></li>
+                            <div id="myDropdown" class="dropdown-content">
+                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
+                                <a href="#arctriomphe">Arc de Triomphe</a>
+                                <a href="#catacombs">Catacombs of Paris</a>
+                                <a href="#eiffel">Eiffel Tower</a>
+                                <a href="#louvre">Louvre Museum</a>
+                                <a href="#notredame">Notre-Dame Cathedral</a>  
+                            </div>
+                    </div>
+                    </div>
+
+                    <div class="dropdown">
+                    <div class="card bg-transparent">
+                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">Rome</button></a></li>
+                            <div id="myDropdown" class="dropdown-content">
+                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
+                                <a href="#colosseum">Colosseum</a>
+                                <a href="#pantheon">Pantheon</a>
+                                <a href="forum">Roman Forum</a>
+                                <a href="sistinechapel">Sistine Chapel</a>
+                                <a href="#spanishsteps">Spanish Steps</a>
+                                <a href="#basilica">St. Peter's Basilica</a>                        
+                                <a href="trevi">Trevi Fountain</a>
+                                <a href="vatican">Vatican Museum</a>   
+                            </div>
+                    </div>
+                    </div>
+
+                    <div class="dropdown">
+                    <div class="card bg-transparent">
+                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">Rio De Janiero</button></a></li>
+                            <div id="myDropdown" class="dropdown-content">
+                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
+                                <a href="#redeemer">Christ the Redeemer</a>
+                                <a href="#selaron">Escadaria Selaron</a> 
+                            </div>
+                    </div>
+                    </div>
+                    
+                    <div class="dropdown">
+                    <div class="card bg-transparent">
+                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">Tokyo</button></a></li>
+                            <div id="myDropdown" class="dropdown-content">
+                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
+                                <a href="#imperial">Imperial Palace</a>
+                                <a href="#senso-ji">Senso-ji</a>
+                                <a href="#skytree">Tokyo Skytree</a> 
+                                <a href="#tokyotower">Tokyo Tower</a>
+                            </div>
+                    </div>
+                    </div>
+
+                    <div class="dropdown">
+                    <div class="card bg-transparent">
+                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">Washington D.C.</button></a></li>
+                            <div id="myDropdown" class="dropdown-content">
+                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
+                                <a href="#monument">Washington Monument</a>
+                                <a href="#whitehouse">White House</a>
+                                <a href="#smithsonian">Smithsonians</a>
+                                <a href="#capitolbuilding">The Capitol Building</a>
+                                <a href="#lincolnmemorial">The Lincoln Memorial</a>
+                            </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
                 </div>
-                <hr>
-                <br>
+            </ul>
+        </main>
+
+        <footer class="footer text-center py-2 mt-auto">
+            <hr>
+            <div class="container text-center">
+                <span class="text-muted">&copy; Team 26</span>
             </div>
-        </div>
-    </main>
-    <hr>
-    <footer class="text-center text-black">
-        <div class="text-center p-3 ">
-            © 2021 Copyright: Temiloluwa
-        </div>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
+        </footer>
+
+
+    </div>
+
+
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
         crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-    <script src="fetchHello.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD--tvlk2pBp4gv67P_d3dF5odM3WEgIhI"></script>
 </body>
 
 </html>
