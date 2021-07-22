@@ -27,229 +27,37 @@
             <input type="text" id="cities" onkeyup="myCities()" placeholder="Search..." title="Type in a city">
             <ul id="myUL">
                 <div class="container vertical-menu">
-                    <div class="row">
-                        <div class="col-md-6 offset-md-3">
-                            <div class="dropdown">
-
-                    <div class="card bg-transparent">
-                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">Athens</button></a></li>
-                            <div id="myDropdown" class="dropdown-content">
-                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
-                                <a href="#acropolisathens">Acropolis of Athens</a>
-                                <a href="#agoraathens">Ancient Agora of Athens</a>
-                                <a href="panathenaic">Panathenaic Stadium</a>
-                                <a href="#parthenon">Parthenon</a>
-                                <a href="#zeus">Temple of Olympian Zeus</a>                        
-                            </div>
-                    </div>
+                    <div class="dropdown">
+                        <li><a href="#"><button onclick="location.assign('athens.html');" class="dropbtn">Athens</button></a></li>
                     </div>
 
                     <div class="dropdown">
-                    <div class="card bg-transparent">
-                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">Barcelona</button></a></li>
-                            <div id="myDropdown" class="dropdown-content">
-                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
-                                <a href="#sagradafamilia">La Sagrada Familia</a>
-                                <a href="#guell">Park Guell</a>
-                                <a href="mila">Casa Mila</a>
-                                <a href="batllo"">Casa Batllo</a>
-                                <a href="#barrigotic">Barri Gotic</a>
-                                <a href="#catedralbarcelona">Catedral de Barcelona</a>                        
-                                <a href="picasso">Museu Picasso</a>
-                            </div>
-                    </div>
+                        <li><a href="#"><button onclick="location.assign('barcelona.html');" class="dropbtn">Barcelona</button></a></li>
                     </div>
 
                     <div class="dropdown">
-                    <div class="card bg-transparent">
-                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">Bangkok</button></a></li>
-                            <div id="myDropdown" class="dropdown-content">
-                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
-                                <a href="#grandpalace">The Grand Palace</a>
-                                <a href="#chetuphon">What Phra Chetuphon</a>
-                                <a href="watarun">Wat Arun Ratchawararam</a>
-                                <a href="emeraldbuddha">Temple of the Emerald Buddha</a>
-                            </div>
-                    </div>
+                        <li><a href="#"><button onclick="location.assign('bangkok.html');" class="dropbtn">Bangkok</button></a></li>
                     </div>
 
                     <div class="dropdown">
-                    <div class="card bg-transparent">
-                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">Cusco</button></a></li>
-                            <div id="myDropdown" class="dropdown-content">
-                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
-                                <a href="#colosseum">Colosseum</a>
-                                <a href="#pantheon">Pantheon</a>
-                                <a href="forum">Roman Forum</a>
-                                <a href="sistinechapel">Sistine Chapel</a>
-                                <a href="#spanishsteps">Spanish Steps</a>
-                                <a href="#basilica">St. Peter's Basilica</a>                        
-                                <a href="trevi">Trevi Fountain</a>
-                                <a href="vatican">Vatican Museum</a>   
-                            </div>
-                    </div>
+                        <li><a href="#"><button onclick="location.assign('cusco.html');" class="dropbtn">Cusco</button></a></li>
                     </div>
 
                     <div class="dropdown">
-                    <div class="card bg-transparent">
-                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">Dubai</button></a></li>
-                            <div id="myDropdown" class="dropdown-content">
-                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
-                                <a href="#colosseum">Colosseum</a>
-                                <a href="#pantheon">Pantheon</a>
-                                <a href="#forum">Roman Forum</a>
-                                <a href="#sistinechapel">Sistine Chapel</a>
-                                <a href="#spanishsteps">Spanish Steps</a>
-                                <a href="#basilica">St. Peter's Basilica</a>                        
-                                <a href="#trevi">Trevi Fountain</a>
-                                <a href="#vatican">Vatican Museum</a>   
-                            </div>
+                        <li><a href="#"><button onclick="location.assign('istanbul.html');" class="dropbtn">Istanbul</button></a></li>
                     </div>
+
+
+                    <div class="dropdown">
+                        <li><a href="#"><button onclick="location.assign('london.html');" class="dropbtn">London</button></a></li>
                     </div>
 
                     <div class="dropdown">
-                    <div class="card bg-transparent">
-                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">Hong Kong</button></a></li>
-                            <div id="myDropdown" class="dropdown-content">
-                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
-                                <a href="#colosseum">Colosseum</a>
-                                <a href="#pantheon">Pantheon</a>
-                                <a href="#forum">Roman Forum</a>
-                                <a href="#sistinechapel">Sistine Chapel</a>
-                                <a href="#spanishsteps">Spanish Steps</a>
-                                <a href="#basilica">St. Peter's Basilica</a>                        
-                                <a href="#trevi">Trevi Fountain</a>
-                                <a href="#vatican">Vatican Museum</a>   
-                            </div>
-                    </div>
+                        <li><a href="#"><button onclick="location.assign('newyork.html');" class="dropbtn">New York City</button></a></li>
+                    </div>                    
 
-                    <div class="dropdown">
-                    <div class="card bg-transparent">
-                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">Istanbul</button></a></li>
-                            <div id="myDropdown" class="dropdown-content">
-                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
-                                <a href="#basilicacistern">Basilica Cistern</a>B
-                                <a href="#grandbazaar">Grand Bazaar</a>
-                                <a href="#hagiasophia">Hagia Sophia</a>
-                                <a href="#bluemosque">The Blue Mosque</a>
-                                <a href="#topkapi">Topkapi Palace Museum</a>    
-                            </div>
-                    </div>
-                    </div>
-
-                    <div class="dropdown">
-                    <div class="card bg-transparent">
-                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">London</button></a></li>
-                            <div id="myDropdown" class="dropdown-content">
-                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
-                                <a href="#bigben">Big Ben</a>
-                                <a href="#buckingham">Buckingham Palace</a>
-                                <a href="#towerbridge">Tower Bridge</a>
-                                <a href="#towerlondon">Tower of London</a>        
-                                <a href="#westminster">Westminster Abbey</a>                   
-                            </div>
-                    </div>
-                    </div>
-
-                    <div class="dropdown">
-                    <div class="card bg-transparent">
-                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">New York City</button></a></li>
-                            <div id="myDropdown" class="dropdown-content">
-                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
-                                <a href="#brooklyn">Brooklyn Bridge</a>
-                                <a href="#empire">Empire State Building</a>
-                                <a href="#metroart">The Metropolitan Museum of Art</a>
-                                <a href="#guggenheim">Solomon R. Guggenheim Museum</a>
-                                <a href="#liberty">Statue of Liberty</a>                          
-                            </div>
-                    </div>
-                    </div>
-
-                    <div class="dropdown">
-                    <div class="card bg-transparent">
-                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">Osaka</button></a></li>
-                            <div id="myDropdown" class="dropdown-content">
-                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
-                                <a href="#osakacastle">Osaka Castle/a>
-                                <a href="#shitennoji">Shitennoji</a>
-                                <a href="#tsutenkaku">Tsutenkaku</a>
-                                <a href="#umeda">Umeda Sky Building</a>
-
-                            </div>
-                    </div>
-                    </div>
-
-                    <div class="dropdown">
-                    <div class="card bg-transparent">
-                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">Paris</button></a></li>
-                            <div id="myDropdown" class="dropdown-content">
-                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
-                                <a href="#arctriomphe">Arc de Triomphe</a>
-                                <a href="#catacombs">Catacombs of Paris</a>
-                                <a href="#eiffel">Eiffel Tower</a>
-                                <a href="#louvre">Louvre Museum</a>
-                                <a href="#notredame">Notre-Dame Cathedral</a>  
-                            </div>
-                    </div>
-                    </div>
-
-                    <div class="dropdown">
-                    <div class="card bg-transparent">
-                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">Rome</button></a></li>
-                            <div id="myDropdown" class="dropdown-content">
-                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
-                                <a href="#colosseum">Colosseum</a>
-                                <a href="#pantheon">Pantheon</a>
-                                <a href="forum">Roman Forum</a>
-                                <a href="sistinechapel">Sistine Chapel</a>
-                                <a href="#spanishsteps">Spanish Steps</a>
-                                <a href="#basilica">St. Peter's Basilica</a>                        
-                                <a href="trevi">Trevi Fountain</a>
-                                <a href="vatican">Vatican Museum</a>   
-                            </div>
-                    </div>
-                    </div>
-
-                    <div class="dropdown">
-                    <div class="card bg-transparent">
-                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">Rio De Janiero</button></a></li>
-                            <div id="myDropdown" class="dropdown-content">
-                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
-                                <a href="#redeemer">Christ the Redeemer</a>
-                                <a href="#selaron">Escadaria Selaron</a> 
-                            </div>
-                    </div>
-                    </div>
-                    
-                    <div class="dropdown">
-                    <div class="card bg-transparent">
-                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">Tokyo</button></a></li>
-                            <div id="myDropdown" class="dropdown-content">
-                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
-                                <a href="#imperial">Imperial Palace</a>
-                                <a href="#senso-ji">Senso-ji</a>
-                                <a href="#skytree">Tokyo Skytree</a> 
-                                <a href="#tokyotower">Tokyo Tower</a>
-                            </div>
-                    </div>
-                    </div>
-
-                    <div class="dropdown">
-                    <div class="card bg-transparent">
-                        <li><a href="#"><button onclick="myDropdown()" class="dropbtn">Washington D.C.</button></a></li>
-                            <div id="myDropdown" class="dropdown-content">
-                                <input type="text" placeholder="Search..." id="myInput" onkeyup="filterDropdown()">  
-                                <a href="#monument">Washington Monument</a>
-                                <a href="#whitehouse">White House</a>
-                                <a href="#smithsonian">Smithsonians</a>
-                                <a href="#capitolbuilding">The Capitol Building</a>
-                                <a href="#lincolnmemorial">The Lincoln Memorial</a>
-                            </div>
-                    </div>
-                    </div>
-                    </div>
-                    </div>
                 </div>
+
             </ul>
         </main>
 
