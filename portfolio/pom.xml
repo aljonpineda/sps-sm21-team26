@@ -16,7 +16,7 @@
 
     <!-- Project-specific properties -->
     <exec.mainClass>com.google.sps.ServerMain</exec.mainClass>
-    <googleCloudProjectId>tige-sps-summer21</googleCloudProjectId>
+    <googleCloudProjectId>summer21-sps-26</googleCloudProjectId>
   </properties>
 
 <dependencies>
